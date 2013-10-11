@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load lfs_tags %}
+
+{% if categories %}
+    <div class="categories-portlet portlet">
+        <div class="portlet-body">
+        <div class="navbar-custom">
+          <div class="navbar-inner-custom">
+            <div class="container">
+              <ul class="nav-custom">
+              	 {% for category in categories %}
+	                <li>
+	                	<a {% if category.is_current %}class="current"{% endif %} href="{{ category.category.get_absolute_url }}">{{ category.category.name }}<span class="nav-indicator"> »</span></a>
+	                	{% category_children category.children %}
+	                </li>
+                 {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+    </div>
+{% endif %}

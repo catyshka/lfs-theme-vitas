@@ -1,0 +1,298 @@
+html, body {
+	background-color: #EAEAEA;
+}
+body {
+	padding-top: 40px;
+	color: #828282;
+}
+.clear {
+	clear: both;
+}
+.container {
+	width: 980px;
+}
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 980px;
+}
+.footer {
+	border-width: 0;
+	color: #828282;
+	border-style: solid;
+	border-top-width: 1px;
+	font-size: 13px;
+	margin: 0 10px;
+	padding: 15px 0;
+}
+.main-container {
+	background-color: #fff;
+	-webkit-box-shadow: 0 5px 5px #333;
+    -moz-box-shadow: 0 5px 5px #333;
+    box-shadow: 0 5px 5px #333;
+    min-height: 600px;
+}
+.baseplate {
+	background-position: center 0;
+	background-color: #476F94;
+	background-image: url("../images/bg-pattern.png");
+	background-repeat: repeat-x;
+	height: 450px;
+	padding: 0;
+	margin: 0;
+}
+.top-container {
+	margin-top: -450px;
+}
+.muted {
+    color: #fff;
+    background-color: #476F94;
+    margin: 0;
+    padding: 10px 0;
+}
+.title-block {
+	height: 100px;
+	background: transparent;
+}
+.title-block h3 {
+	color: #fff;
+}
+.showcase {
+	background-color: #fff;
+	overflow: hidden;
+	padding: 15px;
+}
+.showcase .slides {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+.showcase .slides li {
+	list-style: none outside none;
+	position: relative;
+}
+.showcase-title-block {
+	background-color: #151F29;
+	opacity: 0.9 !important;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	padding: 22px 27px;
+	width: 40%;
+	color: #fff;
+}
+.showcase-title-block h2 {
+	font-size: 25px;
+	margin: 0 0 10px 0;
+	text-align: left;
+	line-height: 1;
+	font-weight: 500;
+}
+.main-content-block {
+	background-color: #fff;
+	
+}
+.main-content-header-wrapper {
+	padding: 15px 25px 20px;
+	background-color: #fff;
+}
+.main-content-header-wrapper h2 {
+	padding : 0;
+	font-size: 27px;
+	font-weight: 500;
+	color: #41607D;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-color: #E9E9E9;
+	margin: 0;
+	padding-bottom: 13px;
+	line-height: 1;
+}
+.main-content-block-text {
+	color: #828282;
+}
+.main-page-block {
+	padding: 0 15px;
+	margin: 0 0 35px 0;
+}
+.main-page-block-icon {
+	float: left;
+	margin: 0 12px 4px 0;
+}
+.main-page-block-title {
+	padding: 9px 0 0 0;
+	overflow: hidden;
+}
+.main-page-block-title h2 {
+	font-size: 19px;
+	font-weight: 500;
+	color: #525252;
+	margin: 0 0 5px 0;
+	line-height: 1;
+}
+.navbar-custom {
+	position: relative;
+	-webkit-box-shadow: 0 1px 3px #333;
+     -moz-box-shadow: 0 1px 3px #333;
+          box-shadow: 0 1px 3px #333;
+   margin: 0;
+   vertical-align: baseline;
+}
+.navbar-custom .navbar-inner-custom {
+    background-color: #F4F4F4;
+    border-color: #E9E9E9;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    overflow: hidden;
+    vertical-align: baseline;
+}
+.navbar-custom .navbar-inner-custom .container {
+	border-right-style: solid;
+	border-right-width: 1px;
+	float: left;
+	text-align: left;
+	border-left-color: #F8F8F8;
+	border-right-color: #F8F8F8;
+	vertical-align: baseline;
+}
+.navbar-custom .navbar-inner-custom .container  .nav-custom {
+	display: block;
+	line-height: 1;
+	list-style: none outside none;
+	border-color: #E9E9E9;
+	margin: 0;
+	padding: 0;
+}
+.navbar-custom .navbar-inner-custom .container  .nav-custom li {
+	list-style: none outside none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	float: left;
+	font-weight: 700;
+	padding: 18px 0;
+	position: relative;
+	border-right-color: #E4E4E4;
+	border-left-color: #F8F8F8;
+	margin: 0;
+}
+.navbar-custom .navbar-inner-custom .container  .nav-custom li a {
+	color: #828282;
+	display: block;
+	line-height: 24px;
+	padding: 0 30px;
+	position: relative;
+	text-decoration: none;
+}
+.navbar-custom .navbar-inner-custom .container  .nav-custom li.active a {
+	color: #3D3D3D;
+}
+.nav-indicator {
+	margin-left: 3px;
+}
+.navbar-main-top-line {
+	border-bottom-color: #FFF;
+	border-top-color: #7594A8;
+	background-color: #4B6A88;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	height: 9px;
+}
+.navbar-top .navbar-inner {
+	background-color: #324A61;
+	background-image: none;
+}
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+    border-width: 0;
+}
+
+.navbar .nav > li > a {
+    text-shadow: none;
+    color: #BAC6D1;
+    background-color: #324A61;
+}
+.navbar-top.navbar .nav > .active > a, 
+.navbar-top.navbar .nav > .active > a:hover, 
+.navbar-top.navbar .nav > .active > a:focus {
+    background-color: #324A61;
+    box-shadow: none;
+    color: #BAC6D1;
+    text-decoration: ubderline;
+}
+.navbar .nav > li > a {
+    border-left-color: #F8F8F8;
+    border-right-color: #F8F8F8;
+}
+.navbar-main .navbar-inner .container .nav li a {
+	display: block;
+	line-height: 24px;
+	padding: 0 30px;
+	position: relative;
+	text-decoration: none;
+	color: #888888;
+	margin: 0;
+}
+.navbar-main.navbar .nav > li > a {
+    text-shadow: none;
+    color: #BAC6D1;
+    background-color: #fff;
+}
+.header-wrapper {
+	border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom: 20px;
+    border-color: #E9E9E9;
+}
+.header2 {
+	font-size: 28px;
+	color: #5C5C5C;
+    padding: 30px 20px 26px;
+}
+.header3 {
+	font-size: 24px;
+	border-color: #E9E9E9;
+    color: #41607D;
+    font-weight: lighter;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+.content-wrapper {
+	padding: 0 20px 10px 20px;
+}
+.catalog {
+	padding: 0 10px;
+}
+.catalog-item  {
+	/*height: 312px;*/
+    width: 33.333%;
+    -moz-box-sizing: border-box;
+    float: left;
+    margin-bottom: 35px;
+    min-height: 1px;
+    padding: 0 10px;
+    position: relative;
+}
+.catalog-item .image-wrapper {
+	background-color: #F6F6F6;
+	border-color: #E9E9E9;
+	border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 6px;
+}
+.catalog-item .image-wrapper .image-wrapper-inner {
+	overflow: hidden;
+    position: relative;
+}
+.catalog-item .catalog-item-description {
+	margin-top: 19px;
+}
+.catalog-item .catalog-item-title a {
+	font-size: 20px;
+    color: #41607D;
+}
+.catalog-item .catalog-item-title {
+    margin-bottom: 14px;
+}
