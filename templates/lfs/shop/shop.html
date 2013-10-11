@@ -1,5 +1,6 @@
 {% extends "lfs/base.html" %}
 {% load i18n %}
+{% load lfs_portlets_tags %}
 
 {% block head %}
     {% if shop.get_meta_keywords %}
@@ -32,4 +33,7 @@
 		      </div>
 	      </div>
       </div>
+      {% block main-slot %}
+    	{% lfs_portlet_slot 'Main' %}
+   	  {% endblock %}
 {% endblock %}
