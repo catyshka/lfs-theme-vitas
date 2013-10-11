@@ -1,0 +1,35 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+
+{% block head %}
+    {% if shop.get_meta_keywords %}
+        <meta name="keywords" content="{{ shop.get_meta_keywords }}" />
+    {% endif %}
+    {% if shop.get_meta_description %}
+        <meta name="description" content="{{ shop.get_meta_description }}" />
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+      <div class="showcase">
+        <ul class='slides'>
+        	<li>
+        		<img src='/static/images/showcase1.png' alt='showcase1'/>
+        		<div class='showcase-title-block'>
+        			<h2>У Витали лучшие унитазы</h2>
+        			<div class='clear'></div>
+        			берите даже не думайте
+        		</div>
+        	</li>
+        </ul>
+      </div>
+      <!-- Example row of columns -->
+       <div class="row-fluid">
+	      <div class='main-content-header-wrapper'>
+		      <div class='main-content-header'>
+		      	<h2>Интернет-магазин сантехники</h2>
+		      </div>
+	      </div>
+      </div>
+{% endblock %}
