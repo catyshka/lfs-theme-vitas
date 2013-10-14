@@ -1,0 +1,13 @@
+{% load lfs_tags %}
+<ul class='subcategories'>
+	{% if categories %}
+        {% for category in categories %}
+            <li>
+                <a {% if category.is_current %}class="current"{% endif %}
+                   href="{{ category.category.get_absolute_url }}">
+                    {{ category.category.name }}
+                </a>
+            </li>    
+        {% endfor %}
+	{% endif %}
+</ul>  
