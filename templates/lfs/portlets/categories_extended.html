@@ -16,7 +16,7 @@
         		</a>
         	</div>
         	<div class='clear'></div>
-        	<div class='main-content-block-text'>{{ category.category.description }}</div>
+        	<div class='main-content-block-text'>{{ category.category.short_description|safe }}</div>
         </div>
 	    {% ifequal forloop.counter|divisibleby:"3" 1 %}
 			</div>

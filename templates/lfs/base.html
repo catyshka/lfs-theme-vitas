@@ -8,6 +8,31 @@
   <head>
 	<title>Bootstrap 101 Template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	{% compress css %}
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery/lightbox/jquery.lightbox-0.5.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery-ui-1.8.13.custom/css/smoothness/jquery-ui-1.8.13.custom.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery/jquery.jgrowl.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}yui/reset-fonts.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}blueprint/src/grid.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+    {% endcompress %}
+    <!--[if IE]>
+        {% compress css %}
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/iefixes.css" />
+        {% endcompress %}
+    <![endif]-->
+
+    {% compress js %}
+        <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}jquery-ui-1.8.13.custom/js/jquery-ui-1.8.13.custom.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.form.pack.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.jgrowl_minimized.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}jquery/lightbox/jquery.lightbox-0.5.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/lfs.js"></script>
+    {% endcompress %}
+        
 	<!-- Bootstrap -->
 	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
@@ -21,7 +46,37 @@
       <div class="navbar-inner">
         <div class="container">
            {% block tabs %}
-                {% tabs %}
+               {% tabs %}
+               {% if user.is_authenticated %}
+                            {% if user.first_name %}
+                                <span>{{ user.first_name }} {{user.last_name}}</span>
+                            {% else %}
+                                <span>{{ user.username }}</span>
+                            {% endif %} |
+
+                            {% if user.is_superuser %}
+                                {% if category %}
+                                    <a href="{% url lfs_manage_category category.id %}">{% trans 'Manage' %}</a>
+                                {% endif %}
+                                {% if product %}
+                                    <a href="{% url lfs_manage_product product.id %}">{% trans 'Manage' %}</a>
+                                {% endif %}
+                                {% if page %}
+                                    <a href="{% url lfs_manage_page page.id %}">{% trans 'Manage' %}</a>
+                                {% endif %}
+                                {% if not category and not product and not page %}
+                                    <a href="{% url lfs_manage_dashboard %}">{% trans 'Manage' %}</a>
+                                {% endif %}
+                                |
+                            {% endif %}
+
+                            <a href="/logout">{% trans 'Logout' %}</a> |
+                            <a href="{% url lfs_my_account %}">{% trans 'My account' %}</a>
+               {% else %}
+                   {% if not ANON_ONLY %}
+                       <a href="{% url lfs_login %}">{% trans 'Login' %}</a>
+                   {% endif %}
+               {% endif %}
            {% endblock %}
         </div>
       </div>
@@ -29,20 +84,28 @@
     <div class='baseplate'>
     </div>
     <div class="container top-container">
-      <div class="masthead">
+      <div class='header-block'>
 	     <div class="title-block">
 	        <h3 class="">Project name</h3>
         </div>
+        <div class='phone-block'>
+	     	<img src='/static/images/phone.png'>&nbsp;Позвоните нам: 333-33-33
+	     </div>
+	     <div class='email-block'>
+	     	<img src='/static/images/email.png'>&nbsp;vitalya@inbox.ru
+	     </div>
         <div class="navbar-main-top-line"></div>
      </div>
    </div>
    <div class="container main-container">
-   	{% block center-slot %}
-    	{% lfs_portlet_slot 'Center' %}
-   	{% endblock %}
-   </div>
-	{% block content %}test{% endblock %}
-      <div class="footer">
+	    {% block wrapper %}
+		   	{% block center-slot %}
+		    	{% lfs_portlet_slot 'Center' %}
+		   	{% endblock %}
+			{% block content %}test{% endblock %}
+	    {% endblock %}
+    </div>
+    <div class="footer">
         <p>&copy; Company 2013</p>
       </div>
 
