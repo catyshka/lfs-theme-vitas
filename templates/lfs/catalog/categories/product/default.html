@@ -2,9 +2,9 @@
 
 {% include "lfs/catalog/categories/product/products_navigation.html" %}
 
-{% sorting %}
 
-<div class="container main-container">
+<div class='products-catalog'>
+	{% sorting %}
   	<div class='header2'>
     	{{ category.name }}
 	</div>
@@ -14,19 +14,21 @@
 	<div id="products">
 	    <table class="lfs-default">
 	        {% for col in products %}
-	        <tr class="product-row">
+	        	{% ifequal forloop.counter0|divisibleby:"3" 1 %}
+					<tr class="product-row  {{forloop.counter0}}">
+				{% endifequal %}
 	            {% for product in col %}
 	                <td class="product-data"
 	                    onclick="window.location='{% url lfs.catalog.views.product_view product.slug %}'">
 	                    <div class="product-image">
 	                        <a href="{% url lfs.catalog.views.product_view product.slug %}">
-	                            {% if product.image.url_100x100 %}
+	                            {% if product.image.url_200x200 %}
 	                                <img alt="{{ product.name }}"
-	                                     src="{{ product.image.url_100x100 }}" />
+	                                     src="{{ product.image.url_200x200 }}" />
 	                            {% endif %}
 	                        </a>
 	                    </div>
-	                    <div>
+	                    <div style='float:left; width: 55%'>
 	                        <div class="product-title">{{ product.name }}</div>
 	                        <div class="product-description">{{ product.obj.get_short_description|safe }}</div>
 	                    </div>
@@ -41,7 +43,7 @@
 	                           <span class="for-sale-standard-price">{{ standard_price|currency:request }}*</span>
 	                           <span class="for-sale-price">{{ price|currency:request }}*</span>
 	                        {% else %}
-	                            <span class="standard-price">{{ price|currency:request }}*</span>
+	                            <span class="standard-price">{{ price|currency:request }}&nbsp;р.</span>
 	                        {% endif %}
 	                        {% if product.price_unit %}
 	                            / {{ product.price_unit }}
@@ -62,22 +64,12 @@
 	                                {% endif %}
 	                            </div>
 	                        {% endif %}
-	                        <div class="price-disclaimer">
-	                            {% if product.price_includes_tax %}
-	                                {% trans '*inc. VAT' %}
-	                            {% else  %}
-	                                {% trans '*exc. VAT' %}
-	                            {% endif %}
-	                        </div>
-	                    </div>
-	                    <div class="details-button">
-	                        <a class="button emphasized"
-	                           href="{% url lfs_product product.slug %}">{% trans 'Details' %}
-	                        </a>
 	                    </div>
 	                </td>
 	            {% endfor %}
-	        </tr>
+	            {% ifequal forloop.counter|divisibleby:"3" 1 %}
+					</tr>
+				{% endifequal %}
 	        {% endfor %}
 	    </table>
 	</div>

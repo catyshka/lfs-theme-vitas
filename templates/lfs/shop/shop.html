@@ -13,7 +13,7 @@
 
 
 {% block content %}
-      <div class="showcase">
+	<div class="showcase">
         <ul class='slides'>
         	<li style='background-image: url(/static/images/showcase1.png);height:380px;'>
         		<div class='showcase-title-block'>
@@ -23,16 +23,16 @@
         		</div>
         	</li>
         </ul>
-      </div>
-      <!-- Example row of columns -->
-       <div class="row-fluid">
-	      <div class='main-content-header-wrapper'>
-		      <div class='main-content-header'>
+	</div>
+	<!-- Example row of columns -->
+	<div class="row-fluid">
+		<div class='main-content-header-wrapper'>
+			<div class='main-content-header'>
 		      	<h2>Интернет-магазин сантехники</h2>
-		      </div>
-	      </div>
-      </div>
-      {% block main-slot %}
+			</div>
+		</div>
+	</div>
+	{% block main-slot %}
     	{% lfs_portlet_slot 'Main' %}
-   	  {% endblock %}
+	{% endblock %}
 {% endblock %}

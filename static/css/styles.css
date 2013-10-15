@@ -340,6 +340,9 @@ body {
     margin: 0;
     padding: 0;
 }
+#products {
+	margin: 0 0 30px 0;
+}
 .details-link {
     cursor: pointer;
     display: block;
@@ -360,4 +363,32 @@ body {
 }
 .email-block {
 	top: 40px;
+}
+table.lfs-default td {
+	width: 33.33%;
+}
+td .product-image {
+	text-align: center;
+	height: 210px;
+}
+td .product-title {
+	padding: 0 0 0 30px;
+}
+td .product-description {
+	padding: 0 0 0 30px;
+	font-size: 10px;
+}
+td .product-price {
+	float: right;
+}
+.standard-price {
+	color: #41607D;
+	font-weight: 500;
+	font-size: 16px;
+	margin: 0 20px 0 0;
+}
+.products-catalog .sorting {
+	margin: 10px;
+	float:right;
+	background: none;
 }
