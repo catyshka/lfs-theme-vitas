@@ -1,5 +1,11 @@
 {% load i18n %}
-
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        // Configuration goes here
+    });
+});
+</script>
 <div class="container">
 	<div class='header-wrapper'>
 		<div class='header2'>
@@ -27,6 +33,23 @@
 	                        <div class="category-description">
 	                            {{ category.short_description|safe }}
 	                        </div>
+	                        <ul id="mycarousel" class="jcarousel-skin-tango">
+		                        {% for product in category.subcategories_products %}
+		                        	<li style=''>
+			                        	<div class='category-product-block'>
+				                        	<a href="{% url lfs.catalog.views.product_view product.slug %}">
+					                            {% if product.image.url_100x100 %}
+					                                <img alt="{{ product.name }}"
+					                                     src="{{ product.image.url_100x100 }}" />
+					                            {% endif %}
+					                        </a>
+					                        <div class='category-product-name'>
+					                        	{{product.name}}
+					                        </div>
+				                        </div>
+			                        </li>
+		                        {% endfor %}
+	                        </ul>
 	                        <div class="clear details-button">
 	                            <a class="details-link"
 	                               href="{% url lfs_category category.slug %}">перейти в подкаталог&nbsp;>>

@@ -391,3 +391,16 @@ td .product-price {
 	float:right;
 	background: none;
 }
+.category-product-block {
+	float: left;
+	margin: 0 20px 0 20px;
+	height: 120px;
+	width: 140px;
+	position: relative;
+}
+.category-product-name {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
