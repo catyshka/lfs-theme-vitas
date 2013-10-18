@@ -1,7 +1,5 @@
 {% load i18n lfs_tags %}
-
-{% include "lfs/catalog/categories/product/products_navigation.html" %}
-
+{% load lfs_portlets_tags %}
 
 <div class='products-catalog'>
 	{% sorting %}
@@ -11,11 +9,52 @@
 	<div class="description">
 	    {{ category.description|safe }}
 	</div>
+	{% if category.filter_categories %}
+		<form id='filter-form' action='{% url lfs_category category.slug %}'>
+		<div class='filter-header'>ФИЛЬТР</div>
+		<select id='subcategory-filter'>
+			{% for filter_category in category.filter_categories %}
+				<option
+				{% if filter_category.id == category.id %}
+					selected='selected'
+				{% endif %}
+				 data-url='{% url lfs_category filter_category.slug %}'>
+					{{filter_category.name}}
+				</option>
+			{% endfor %}
+		</select>
+		<select id='brand-filter' name='manufacturer'>
+			<option value=''>все производители</option>
+			{% for brand in brands %}
+				<option value='{{brand.id}}'
+				{% if brand.id == manufacturer.id %}
+					selected='selected'
+				{% endif %}
+				 >{{brand.name}}</option>
+			{% endfor %}
+		</select>
+		</form>
+		<script type='text/javascript'>
+			$(function() {
+				$('#subcategory-filter').change(function() {
+					var selected = $(this).find('option:selected');
+					if (selected.attr('data-url')) {
+						document.location.href = selected.attr('data-url');
+					}
+				});
+			});
+			$(function() {
+				$('#brand-filter').change(function() {
+						$('#filter-form').submit();
+				});
+			});
+		</script>
+	{% endif %}
 	<div id="products">
 	    <table class="lfs-default">
 	        {% for col in products %}
 	        	{% ifequal forloop.counter0|divisibleby:"3" 1 %}
-					<tr class="product-row  {{forloop.counter0}}">
+					<tr class="product-row">
 				{% endifequal %}
 	            {% for product in col %}
 	                <td class="product-data"
@@ -73,4 +112,5 @@
 	        {% endfor %}
 	    </table>
 	</div>
+	{% include "lfs/catalog/categories/product/products_navigation.html" %}
 </div>

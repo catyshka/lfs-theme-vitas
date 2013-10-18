@@ -1,10 +1,10 @@
 {% load i18n %}
 <script type="text/javascript">
-jQuery(document).ready(function() {
-    jQuery('#mycarousel').jcarousel({
-        // Configuration goes here
-    });
-});
+	jQuery(document).ready(function() {
+	    jQuery('.mycarousel').jcarousel({
+	        // Configuration goes here
+	    });
+	});
 </script>
 <div class="container">
 	<div class='header-wrapper'>
@@ -21,7 +21,7 @@ jQuery(document).ready(function() {
 	            <tr>
 	                {% for category in row %}
 	                    <td class="category-row">
-	                        <div class='header3'>{{ category.name }}</div>
+	                        <div class='header3'><a href="{% url lfs_category category.slug %}">{{ category.name }}</a></div>
 	                        {% if category.get_image %}
 	                        <div class="category-image">
 	                            <a href="{% url lfs_category category.slug %}">
@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
 	                        <div class="category-description">
 	                            {{ category.short_description|safe }}
 	                        </div>
-	                        <ul id="mycarousel" class="jcarousel-skin-tango">
+	                        <ul class="mycarousel jcarousel-skin-tango">
 		                        {% for product in category.subcategories_products %}
 		                        	<li style=''>
 			                        	<div class='category-product-block'>

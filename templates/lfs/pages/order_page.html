@@ -1,0 +1,46 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+{% load lfs_portlets_tags %}
+
+{% block head %}
+    {% if shop.get_meta_keywords %}
+        <meta name="keywords" content="{{ shop.get_meta_keywords }}" />
+    {% endif %}
+    {% if shop.get_meta_description %}
+        <meta name="description" content="{{ shop.get_meta_description }}" />
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+		<div class='header-wrapper'>
+	 		<div class='header2'>
+	  			Связаться в нами
+	  		</div>
+  		</div>
+  		<div class='content-wrapper'>
+  			<div class='contact-form-wrapper'>
+				<form id='contact-form'>
+					<ul>
+						<li>
+							<label for='name'>Ваше имя:</label>
+							<input name='name' class='require-field'>
+						</li>
+						<li>
+							<label for='name'>телефон:</label>
+							<input name='name' class='require-field'>
+						</li>
+						<li>
+							<label for='name'>email:</label>
+							<input name='name' class='require-field'>
+						</li>
+						<li>
+							<label for='name'>Комментарии:</label>
+							<textarea name='name' class='require-field'>
+							</textarea>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+{% endblock %}
