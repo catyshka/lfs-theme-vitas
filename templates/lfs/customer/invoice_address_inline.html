@@ -1,0 +1,34 @@
+<div id="invoice-address-inline">
+	<div style='display:none'>
+        {{ address_form.country }}
+	</div>
+		<ul>
+			<li>
+				<label for='name'>Ваше имя:</label>
+				{{ form.invoice_firstname.errors }}
+                {{ form.invoice_firstname }}
+			</li>
+			<li>
+				<label for='name'>Ваше фамилия:</label>
+				{{ form.invoice_lastname.errors }}
+                {{ form.invoice_lastname }}
+			</li>
+			<li>
+				<label for='name'>Адрес:</label>
+				{{ address_form.line1.errors }}
+                {{ address_form.line1 }}
+			</li>
+			<li>
+				<label for='name'>Телефон:</label>
+				{{ form.invoice_phone.errors }}
+		        {{ form.invoice_phone }}
+			</li>
+			{% if request.user.is_anonymous %}
+				<li>
+					<label for='name'>Email:</label>
+					{{ form.invoice_email.errors }}
+			        {{ form.invoice_email }}
+				</li>
+			{% endif %}
+		</ul>
+</div>

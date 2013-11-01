@@ -37,7 +37,7 @@
 		<!-- Bootstrap -->
 		<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-		<link href="/static/css/styles.css" rel="stylesheet" media="screen">
+		<link href="/static/css/styles.css?v=1" rel="stylesheet" media="screen">
 		<style>
 	    </style>
   	</head>
@@ -86,7 +86,11 @@
     	<div class="container top-container">
       		<div class='header-block'>
 	     		<div class="title-block">
-	        		<h3 class="">Project name</h3>
+	        	{% block right-slot-wrapper %}
+                                    {% block right-slot %}
+                                        {% lfs_portlet_slot 'Right' %}
+                                    {% endblock %}
+                    {% endblock %}
         		</div>
         		<div class='phone-block'>
 	     			<img src='/static/images/phone.png'>&nbsp;Позвоните нам: 333-33-33

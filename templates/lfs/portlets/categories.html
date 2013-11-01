@@ -9,37 +9,56 @@
             <div class="container">
               <ul class="nav-custom">
               	 {% for category in categories %}
-	                <li class='category-item'>
+	                <li class='category-item {% if forloop.last%}category-item-last{% endif %}'>
 	                	<a {% if category.is_current %}class="current"{% endif %} href="{{ category.category.get_absolute_url }}">{{ category.category.name }}<span class="nav-indicator"> »</span></a>
 			            {% category_children category.children %}
 	                </li>
                  {% endfor %}
+                 	<li id='search-link-wrapper'>
+                 		<a href='.' id='search-link'><img src='{{ STATIC_URL }}images/search-button.png'></a>
+                 	</li>
               </ul>
+              <div id='search-form-wrapper'>
+				<form id="search-form" action="{% url lfs_search %}" autocomplete="off">
+                    <input type="hidden" name="livesearch" value="1" />
+                    <div class='search-input-wrapper'>
+                    	<input id="search-input" value="{{ q }}" type="text" name="q" autocomplete="off" data-url="{% url lfs_livesearch %}" />
+                    </div>
+                    <input id='search-form-submit' type="submit" value="Искать!" />
+                </form>
+              </div>
             </div>
           </div>
         </div><!-- /.navbar -->
     </div>
     <script>
-		$('.category-item').hover(
-			function() {
-				var currentItem = this;
-				$('.category-item').each(function(index) {
-					if(currentItem == this) {
-						$('.subcategories').eq(index).slideDown('slow', function() {
-					    });
-					}
-				});
-			},
-			function(){
-				$('.subcategories').hide();
-				//var currentItem = this;
-				//$('.category-item').each(function(index) {
-				//	if(currentItem == this) {
-				//		$('.subcategories').eq(index).slideUp('slow', function() {
-				//	    });
-				//	}
-				//});
-			}
-		);
+    	$(function(){
+    		$('#search-link').click(function() {
+    			console.log('test');
+    			$('#search-form-wrapper').show();
+    			return false;
+    		});
+			$('.category-item').hover(
+				function() {
+					var currentItem = this;
+					$('.category-item').each(function(index) {
+						if(currentItem == this) {
+							$('.subcategories').eq(index).slideDown('slow', function() {
+						    });
+						}
+					});
+				},
+				function(){
+					$('.subcategories').hide();
+					//var currentItem = this;
+					//$('.category-item').each(function(index) {
+					//	if(currentItem == this) {
+					//		$('.subcategories').eq(index).slideUp('slow', function() {
+					//	    });
+					//	}
+					//});
+				}
+			);
+    	});
 	</script>
 {% endif %}

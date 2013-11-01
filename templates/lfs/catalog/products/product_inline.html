@@ -35,6 +35,9 @@
     <h1 class="product-title">
         {{ product.get_name }}
     </h1>
+     <div class="product-description">
+        {{ product.short_description|safe }}
+    </div>
 
     {# Displayed Properties #}
     <div class="product-properties">
