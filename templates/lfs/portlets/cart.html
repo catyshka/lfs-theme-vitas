@@ -1,4 +1,5 @@
 {% load i18n lfs_tags %}
+{% load i18n custom_tags %}
 
 <div class="cart-portlet portlet">
 
@@ -15,7 +16,7 @@
     <div class="portlet-body">
         {% if amount_of_items_int %}
             <div class="price">
-                {{ price|currency:request }}&nbsp;руб.&nbsp;<span class='cart-amount'>({{ amount_of_items_int }})</span>
+                {{ price|currency_ru:request }}&nbsp;<span class='cart-amount'>({{ amount_of_items_int }})</span>
             </div>
         {% else %}
             {% trans 'Cart is empty' %}

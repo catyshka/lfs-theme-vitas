@@ -1,7 +1,8 @@
 {% load i18n lfs_tags %}
+{% load i18n custom_tags %}
 
-<h2>{% trans 'Your cart' %}</h2>
-<table class="lfs-default cart">
+<div class='header2'>{% trans 'Your cart' %}</div>
+<table class="nobordered">
     <tr>
         <th colspan="2">
             {% trans 'Product' %}
@@ -9,12 +10,6 @@
         <th class="left"
             colspan="2">
             {% trans 'Amount' %}
-        </th>
-        <th class="number">
-            {% trans 'Net Price' %}
-        </th>
-        <th class="number">
-            {% trans 'VAT' %}
         </th>
         <th class="number">
             {% trans 'Total' %}
@@ -47,7 +42,7 @@
                         <div>
                             {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                             {% if property.obj.is_select_field and property.display_price %}
-                                ({{ property.price|currency:request}})
+                                ({{ property.price|currency_ru:request}})
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -66,111 +61,16 @@
                 {% endif %}
             </td>
             <td class="number">
-                {{ cart_item.product_price_net|currency:request}}
-            </td>
-            <td class="number">
-                {{ cart_item.product_tax|currency:request}}
-            </td>
-            <td class="number">
-                {{ cart_item.product_price_gross|currency:request}}
+                {{ cart_item.product_price_gross|currency_ru:request}}
             </td>
         </tr>
     {% endfor %}
-
-    {% for discount in discounts %}
-        <tr id="discounts-display">
-            <td></td>
-            <td class="left">
-                {{ discount.name }}
-            </td>
-            <td class="number">
-                1
-            </td>
-            <td></td>
-            <td class="number">
-                - {{ discount.price_net|currency:request}}
-            </td>
-            <td class="number">
-                {% if discount.tax %}
-                    (- {{ discount.tax|currency:request}})
-                {% endif %}
-            </td>
-            <td class="number">
-                - {{ discount.price_gross|currency:request}}
-            </td>
-        </tr>
-    {% endfor %}
-
-    {% if display_voucher %}
-        <tr id="voucher-display">
-            <td></td>
-            <td class="left">
-                {% trans "Voucher" %}
-            </td>
-            <td class="number">
-                1
-            </td>
-            <td></td>
-            <td class="number">
-                - {{ voucher_value|currency:request}}
-            </td>
-            <td class="number">
-                ({{ voucher_tax|currency:request}})
-            </td>
-            <td class="number">
-                - {{ voucher_value|currency:request}}
-            </td>
-        </tr>
-    {% endif %}
-
-    <tr>
-        <td></td>
-        <td>
-            {% trans 'Shipping' %} ({{ selected_shipping_method.name }})
-        </td>
-        <td class="number">
-            1
-        </td>
-        <td></td>
-        <td class="number">
-            {{ shipping_price|currency:request}}
-        </td>
-        <td></td>
-        <td class="number">
-            {{ shipping_price|currency:request}}
-        </td>
-    </tr>
-
-    <tr>
-        <td></td>
-        <td>
-            {% trans 'Payment' %} ({{ selected_payment_method.name }})
-        </td>
-        <td class="number">
-            1
-        </td>
-        <td></td>
-        <td class="number">
-            {{ payment_price|currency:request}}
-        </td>
-        <td></td>
-        <td class="number">
-            {{ payment_price|currency:request}}
-        </td>
-    </tr>
 
     <tr>
         <td colspan="7"
             class="total number padding-top">
             <span class="total-label">{% trans 'Total' %}:</span>
-            {{ cart_price|currency:request}}
-        </td>
-    </tr>
-    <tr>
-        <td colspan="7"
-            class="discreet number">
-            <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
-            {{ cart_tax|currency:request}}
+            {{ cart_price|currency_ru:request}}
         </td>
     </tr>
 </table>

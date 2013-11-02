@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load lfs_tags %}
 {% load reviews_tags %}
+{% load i18n custom_tags %}
 
 <form id="product-form"
       action="{% url lfs.catalog.views.product_form_dispatcher %}"
@@ -56,29 +57,29 @@
             <div>
                 <span class="for-sale-standard-price" nowrap="nowrap">
                     <span class="for-sale-standard-price-value">
-                        {{ product|get_standard_price_gross:request|currency:request }}
+                        {{ product|get_standard_price_gross:request|currency_ru:request }}
                     </span>
                     * {% if price_unit %}/ {{ price_unit }}{% endif %}</span>
                 <span class="for-sale-price" nowrap="nowrap">
                     <span class="for-sale-price-value">
-                        {{ product|get_for_sale_price_gross:request|currency:request }}
+                        {{ product|get_for_sale_price_gross:request|currency_ru:request }}
                     </span>
                     * {% if price_unit %}/ {{ price_unit }}{% endif %}
                 </span>
             </div>
             {% if product.get_active_base_price %}
                 <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}
+                    {{ product|get_base_price_gross:request|currency_ru:request }} / {{ product.get_base_price_unit }}
                 </div>
             {% endif %}
         {% else %}
             <div class="standard-price"
                   nowrap="nowrap">
-                  <span class="standard-price-value">{{ product|get_price_gross:request|currency:request }}</span> {% if price_unit %}/ {{ price_unit }}{% endif %}
+                  <span class="standard-price-value">{{ product|get_price_gross:request|currency_ru:request }}</span> {% if price_unit %}/ {{ price_unit }}{% endif %}
             </div>
             {% if product.get_active_base_price %}
                 <div class="base-price">
-                    {{ product|get_base_price_gross:request|currency:request }} / {{ product.get_base_price_unit }}*
+                    {{ product|get_base_price_gross:request|currency_ru:request }} / {{ product.get_base_price_unit }}*
                 </div>
             {% endif %}
         {% endif %}
@@ -108,7 +109,7 @@
                                         {{ option.name }}
 
                                         {% if property.display_price %}
-                                         / {{ option.price|currency:request}}
+                                         / {{ option.price|currency_ru:request}}
                                         {% endif %}
                                     </option>
                                 {% endfor %}
@@ -230,11 +231,11 @@
                             nowrap="nowrap">
                                 {% if product_variant.get_for_sale %}
                                     <span class="for-sale-standard-price">
-                                        {{ product_variant|get_standard_price:request|currency:request}}
+                                        {{ product_variant|get_standard_price:request|currency_ru:request}}
                                     </span>
-                                    {{ product_variant|get_for_sale_price:request|currency:request}}
+                                    {{ product_variant|get_for_sale_price:request|currency_ru:request}}
                                 {% else %}
-                                    {{ product_variant|get_price:request|currency:request}}
+                                    {{ product_variant|get_price:request|currency_ru:request}}
                                 {% endif %}
                             </td>
                         </tr>
@@ -315,11 +316,11 @@
                         </td>
                         <td class="number"
                             nowrap="nowrap">
-                            {{ product_accessory.accessory|get_price:request|currency:request}}
+                            {{ product_accessory.accessory|get_price:request|currency_ru:request}}
                         </td>
                         <td class="number"
                              nowrap="nowrap">
-                            {{ product_accessory|get_price:request|currency:request}}
+                            {{ product_accessory|get_price:request|currency_ru:request}}
                         </td>
                     </tr>
                 {% endfor %}

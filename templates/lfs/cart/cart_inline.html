@@ -1,4 +1,6 @@
 {% load i18n lfs_tags %}
+{% load i18n custom_tags %}
+
 <div class='content-wrapper'>
 {% if cart_items %}
     <div class="header-wrapper">
@@ -56,7 +58,7 @@
                                 <div>
                                     {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                                     {% if property.obj.is_select_field and property.display_price %}
-                                        ({{ property.price|currency:request }})
+                                        ({{ property.price|currency_ru:request }})
                                     {% endif %}
                                 </div>
                             {% endfor %}
@@ -84,7 +86,7 @@
                     </td>
                     <td class="number"
                         nowrap="nowrap">
-                        {{ cart_item.product_price_gross|currency:request }}
+                        {{ cart_item.product_price_gross|currency_ru:request }}
                     </td>
                     <td class="right">
                         <a href="{% url lfs_delete_cart_item cart_item.obj.id %}"
@@ -101,28 +103,9 @@
                 </td>
                 <td class="total number padding-top"
                     nowrap="nowrap">
-                    {{ cart_price|currency:request }}
+                    {{ cart_price|currency_ru:request }}
                 </td>
                 <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="3"
-                    class="discreet left">
-                    {% trans 'Inclusive VAT' %}:
-                </td>
-                <td class="discreet number"
-                    nowrap="nowrap">
-                    {{ cart_tax|currency:request }}
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="5"
-                    class="discreet left padding-top">
-                    {% trans 'Total delivery time' %}: {{ max_delivery_time }}
-                </td>
             </tr>
             <tr>
                 <td colspan="6">

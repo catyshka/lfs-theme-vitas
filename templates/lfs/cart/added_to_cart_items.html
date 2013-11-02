@@ -1,5 +1,7 @@
 {% load i18n %}
 {% load lfs_tags %}
+{% load i18n custom_tags %}
+
 <table class='nobordered'>
     <tr>
         <th colspan="2">
@@ -43,7 +45,7 @@
                         <div>
                             {{ property.title }}: {{ property.value }} {{ property.unit|safe }}
                             {% if property.obj.is_select_field and property.display_price %}
-                                ({{ property.price|currency:request}})
+                                ({{ property.price|currency_ru:request}})
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -60,20 +62,20 @@
 
             </td>
             <td class="number">
-                {{ cart_item.product_price_net|currency:request}}
+                {{ cart_item.product_price_net|currency_ru:request}}
             </td>
             <td class="number">
-                {{ cart_item.product_tax|currency:request}}
+                {{ cart_item.product_tax|currency_ru:request}}
             </td>
             <td class="number last">
-                {{ cart_item.product_price_gross|currency:request}}
+                {{ cart_item.product_price_gross|currency_ru:request}}
             </td>
         </tr>
     {% endfor %}
     <tr class="total">
         <td colspan="3"></td>
         <td colspan="3" class="number total">
-            {% trans 'Total' %}: {{ total|currency:request}}
+            {% trans 'Total' %}: {{ total|currency_ru:request}}
         </td>
     </tr>
 </table>

@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load lfs_portlets_tags %}
 {% load i18n lfs_tags pagination_tags %}
+{% load i18n custom_tags %}
 
 {% block head %}
     {% if shop.get_meta_keywords %}
@@ -63,15 +64,15 @@
 		                    <td class="number">
 		                        <div class="product-price">
 		                            {% if product.for_sale %}
-		                               <span class="for-sale-standard-price">{{ product.get_standard_price|currency:request }}</span>
-		                               <span class="for-sale-price">{{ product|get_for_sale_price:request|currency:request }}*</span>
+		                               <span class="for-sale-standard-price">{{ product.get_standard_price|currency_ru:request }}</span>
+		                               <span class="for-sale-price">{{ product|get_for_sale_price:request|currency_ru:request }}*</span>
 		                            {% else %}
-		                            <span class="standard-price">{{ product|get_price:request|currency:request }}</span>
+		                            <span class="standard-price">{{ product|get_price:request|currency_ru:request }}</span>
 		                            {% endif %}
 		                            {% if product.get_price_unit %}/ {{ product.get_price_unit }}{% endif %}
 		                            {% if product.active_base_price %}
 		                                <div class="base-price">
-		                                    {{ product|get_base_price_gross:request|currency:request}}* {% if product.get_base_price_unit %}/ {{ product.get_base_price_unit }}{% endif %}
+		                                    {{ product|get_base_price_gross:request|currency_ru:request}}* {% if product.get_base_price_unit %}/ {{ product.get_base_price_unit }}{% endif %}
 		                                </div>
 		                            {% endif %}
 		                        </div>

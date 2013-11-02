@@ -492,6 +492,7 @@ td .product-price {
 	position: absolute; 
 	right: 0;
 	top: 60px;
+	z-index: 1000;
 }
 #search-form-wrapper form{
 	margin: 0;;
@@ -533,7 +534,8 @@ a.button, button, body .emphasized {
     color: #FFFFFF !important;
     font-size: 12px;
     font-weight: 700;
-    margin: 0;
+    margin: 0 2px 0 0;
+    padding: 6px 10px 4px 7px;
 }
 a.button:hover, button:hover, body .emphasized:hover {
 	text-decoration: underline;
@@ -541,6 +543,10 @@ a.button:hover, button:hover, body .emphasized:hover {
 a.button.left, button.left {
     float: left;
     margin: 0;
+}
+button[type] {
+    line-height: 17px;
+    padding: 5px 10px 4px 7px;
 }
 ul, ol {
 	margin: 0;
@@ -674,4 +680,7 @@ input[type="text"] {
 	height: 30px;
 	width: 100px;
 	margin: 0;
+}
+#cart-inline {
+	margin: 0 0 20px 0;
 }

@@ -1,5 +1,6 @@
 {% load i18n lfs_tags %}
 {% load lfs_portlets_tags %}
+{% load i18n custom_tags %}
 
 <div class='products-catalog'>
 	{% sorting %}
@@ -79,17 +80,17 @@
 	                            {% trans "Starting at" %}
 	                        {% endif %}
 	                        {% if product.obj.get_for_sale %}
-	                           <span class="for-sale-standard-price">{{ standard_price|currency:request }}*</span>
-	                           <span class="for-sale-price">{{ price|currency:request }}*</span>
+	                           <span class="for-sale-standard-price">{{ standard_price|currency_ru:request }}*</span>
+	                           <span class="for-sale-price">{{ price|currency_ru:request }}*</span>
 	                        {% else %}
-	                            <span class="standard-price">{{ price|currency:request }}&nbsp;р.</span>
+	                            <span class="standard-price">{{ price|currency_ru:request }}</span>
 	                        {% endif %}
 	                        {% if product.price_unit %}
 	                            / {{ product.price_unit }}
 	                        {% endif %}
 	                        {% if product.obj.get_active_packing_unit %}
 	                            <div class="base-price">
-	                                {{ base_packing_price|currency:request }}* / {{ product.obj.get_packing_info.1 }}
+	                                {{ base_packing_price|currency_ru:request }}* / {{ product.obj.get_packing_info.1 }}
 	                            </div>
 	                        {% endif %}
 	                        {% if product.obj.get_active_base_price %}
@@ -97,7 +98,7 @@
 	                                {% if base_price_starting_from %}
 	                                    {% trans "Starting at" %}
 	                                {% endif %}
-	                                {{ base_price|currency:request }}*
+	                                {{ base_price|currency_ru:request }}*
 	                                {% if product.obj.get_base_price_unit %}
 	                                    / {{ product.obj.get_base_price_unit }}
 	                                {% endif %}
