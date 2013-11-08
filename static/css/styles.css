@@ -50,7 +50,7 @@ body {
 	height: 100px;
 	background: transparent;
 	position: relative;
-	background: url("../images/title.png") no-repeat 15px 25px  transparent;
+	background: url("../images/logoBig7.png") no-repeat 15px 10px  transparent;
 }
 .title-block h3 {
 	color: #fff;
