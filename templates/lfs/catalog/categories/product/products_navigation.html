@@ -1,7 +1,7 @@
 {% load i18n %}
 {% if pagination.total_pages > 1 %}
 <div class="products-navigation">
-    {% if pagination.first_page %}
+    {% if False and pagination.first_page %}
     <span class="first-page">
         <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.first_page }}{{ pagination.getvars }}">{% trans "First page" %}</a>
     </span>
@@ -25,7 +25,7 @@
     </span>
     {% endif %}
 
-    {% if pagination.last_page %}
+    {% if False and pagination.last_page %}
     <span class="last-page">
       <a href="{{ pagination.url }}?{{ pagination.getparam }}={{ pagination.last_page }}{{ pagination.getvars }}">{% trans "Last page" %}</a>
     </span>
