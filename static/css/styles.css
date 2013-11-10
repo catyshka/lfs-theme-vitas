@@ -50,7 +50,9 @@ body {
 	height: 100px;
 	background: transparent;
 	position: relative;
-	background: url("../images/logoBig9.png") no-repeat 15px 10px  transparent;
+}
+.title-block .logo-big {
+	margin: 10px 0 0 10px;
 }
 .title-block h3 {
 	color: #fff;

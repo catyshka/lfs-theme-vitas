@@ -86,11 +86,14 @@
     	<div class="container top-container">
       		<div class='header-block'>
 	     		<div class="title-block">
-	        		{% block right-slot-wrapper %}
-                                    {% block right-slot %}
-                                        {% lfs_portlet_slot 'Right' %}
-                                    {% endblock %}
-                    {% endblock %}
+		     		<a href='/'>
+		     			<img class='logo-big' src='/static/images/logoBig9.png'/>
+		     		</a>
+		        	{% block right-slot-wrapper %}
+	                     {% block right-slot %}
+	                         {% lfs_portlet_slot 'Right' %}
+	                     {% endblock %}
+	                {% endblock %}
         		</div>
         		<div class='phone-block'>
 	     			<img src='/static/images/phone.png'>&nbsp;Позвоните нам: 333-33-33
@@ -113,5 +116,9 @@
 	        	<p>&copy; Company 2013</p>
 	      	</div>
 		</div>
+		<script type='text/javascript'>
+			$(function(){
+			});
+		</script>
 	</body>
 </html>
