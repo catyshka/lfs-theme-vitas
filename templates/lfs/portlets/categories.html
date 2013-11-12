@@ -9,7 +9,7 @@
             <div class="container">
               <ul class="nav-custom">
               	 {% for category in categories %}
-	                <li class='category-item {% if forloop.last%}category-item-last{% endif %}'>
+	                <li style='float:left' class='category-item {% if forloop.last%}category-item-last{% endif %}'>
 	                	<a {% if category.is_current %}class="current"{% endif %} href="{{ category.category.get_absolute_url }}">{{ category.category.name }}<span class="nav-indicator"> »</span></a>
 			            {% category_children category.children %}
 	                </li>
