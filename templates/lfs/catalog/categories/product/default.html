@@ -51,14 +51,13 @@
 			});
 		</script>
 	{% endif %}
-	<div id="products">
-	    <table class="lfs-default">
+	<div id="products" class="lfs-default container">
 	        {% for col in products %}
 	        	{% ifequal forloop.counter0|divisibleby:"3" 1 %}
-					<tr class="product-row">
+					<div class="row">
 				{% endifequal %}
 	            {% for product in col %}
-	                <td class="product-data"
+	                <div class="span4 product-data"
 	                    onclick="window.location='{% url lfs.catalog.views.product_view product.slug %}'">
 	                    <div class="product-image">
 	                        <a href="{% url lfs.catalog.views.product_view product.slug %}">
@@ -105,13 +104,12 @@
 	                            </div>
 	                        {% endif %}
 	                    </div>
-	                </td>
+	                </div>
 	            {% endfor %}
 	            {% ifequal forloop.counter|divisibleby:"3" 1 %}
-					</tr>
+					</div>
 				{% endifequal %}
 	        {% endfor %}
-	    </table>
 	</div>
 	{% include "lfs/catalog/categories/product/products_navigation.html" %}
 </div>

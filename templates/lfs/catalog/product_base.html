@@ -46,7 +46,7 @@
         {{ product_inline|safe }}
     </div>
 	<ul id="mycarousel" class="jcarousel-skin-tango">
-		{% for product in product.current_category.same_category_products %}
+		{% for product in product.same_category_products %}
 			<li style=''>
 				<div class='category-product-block'>
 					<a href="{% url lfs.catalog.views.product_view product.slug %}">

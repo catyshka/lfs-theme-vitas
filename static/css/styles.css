@@ -368,21 +368,24 @@ body {
 .email-block {
 	top: 40px;
 }
-table.lfs-default td {
-	width: 33.33%;
+.lfs-default .product-data {
+	 
 }
-td .product-image {
+#products .row {
+	margin-bottom: 40px;
+}
+.product-data .product-image {
 	text-align: center;
 	height: 210px;
 }
-td .product-title {
+.product-data .product-title {
 	padding: 0 0 0 30px;
 }
-td .product-description {
+.product-data .product-description {
 	padding: 0 0 0 30px;
 	font-size: 10px;
 }
-td .product-price {
+.product-data .product-price {
 	float: right;
 	padding: 0 10px 0 0;
     text-align: right;
