@@ -1,0 +1,12 @@
+.navbar-custom {
+	filter: 
+		progid:DXImageTransform.Microsoft.Shadow(
+			color=#333333, Direction=135, Strength=3
+		);
+}
+.categories-portlet ul ul.subcategories {
+	filter: 
+		progid:DXImageTransform.Microsoft.Shadow(
+			color=#333333, Direction=135, Strength=3
+		);
+}

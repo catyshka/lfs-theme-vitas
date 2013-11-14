@@ -133,10 +133,10 @@ body {
 .navbar-custom {
 	position: relative;
 	-webkit-box-shadow: 0 1px 3px #333;
-     -moz-box-shadow: 0 1px 3px #333;
-          box-shadow: 0 1px 3px #333;
-   margin: 0;
-   vertical-align: baseline;
+	-moz-box-shadow: 0 1px 3px #333;
+	box-shadow: 0 1px 3px #333;
+	margin: 0;
+	vertical-align: baseline;
 }
 .navbar-custom .navbar-inner-custom {
     background-color: #F4F4F4;
@@ -182,7 +182,7 @@ body {
 	color: #828282;
 	display: block;
 	line-height: 24px;
-	padding: 0 30px;
+	padding: 0 70px;
 	position: relative;
 	text-decoration: none;
 }
@@ -300,7 +300,6 @@ body {
 .subcategories {
 	display: none;
 	list-style: none outside none;
-	width: 250px;
 	position: absolute;
 	top: 60px;
 	left: 0;
@@ -328,7 +327,7 @@ body {
     padding-right: 15px;
     display: block;
     line-height: 24px;
-    padding: 0 15px;
+    padding: 0 30px 0 20px;
     position: relative;
     text-decoration: none;
     font-weight: 500;
@@ -341,6 +340,9 @@ body {
 .categories-portlet ul ul.subcategories {
     margin: 0;
     padding: 0;
+    -webkit-box-shadow: 0 5px 5px #333;
+    -moz-box-shadow: 0 5px 5px #333;
+    box-shadow: 0 5px 5px #333;
 }
 #products {
 	margin: 0 0 30px 0;
@@ -480,7 +482,7 @@ td .product-price {
 	border-right: none;
 }
 .navbar-custom .navbar-inner-custom .container .nav-custom > li.category-item-last > a{
-	padding: 0 18px 0 30px;
+	padding: 0 97px 0 70px;
 	float: left;
 }
 .navbar-custom .navbar-inner-custom .container .nav-custom > li#search-link-wrapper > a#search-link{
