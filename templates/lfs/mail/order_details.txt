@@ -50,12 +50,9 @@
 {% trans 'Amount' %}: {{ item.amount }} {{ item.product.unit }} {% if item.product.active_packing_unit %}{{ item|packages }} {{ item.product.packing_unit_unit }}{% endif %}
 {% trans 'Price' %}: {{ item.product_price_gross|currency_ru }}
 {% trans 'Total' %}: {{ item.price_gross|currency_ru }}
-{% endfor %}{% if order.voucher_number %} {% trans 'Voucher' %} ({{ order.voucher_number }}) - {{ order.voucher_price|currency_ru }} - {{ order.voucher_price|currency_ru }}{% endif %}
-{% trans 'Shipping method' %}: {{ order.shipping_price|currency_ru }} ({{ order.shipping_method }})
-{% trans 'Payment method' %}: {{ order.payment_price|currency_ru }} ({{ order.payment_method }})
+{% endfor %}
 
 {% trans ' Total' %}: {{ order.price|currency_ru }}
-{% trans 'Inclusive VAT' %}: {{ order.tax|currency_ru }}
 
 {% if order.message %} {% trans 'Message' %}
 ==============================================================================
