@@ -5,10 +5,10 @@
     </head>
     <body>
         <p>
-            {% blocktrans with firstname=order.customer_firstname lastname=order.customer_lastname %} {{ firstname }} {{ lastname }}{% endblocktrans %},
+            {% blocktrans with firstname=order.customer_firstname lastname=order.customer_lastname %}Dear {{ firstname }} {{ lastname }}{% endblocktrans %},
         </p>
         <p>
-             Вы сделали заказ в интернет-магазине сантехники liquidtech.ru!
+            {% trans "your order has been paid." %}
         </p>
         <p>
             {% include "lfs/mail/order_details.html" %}
