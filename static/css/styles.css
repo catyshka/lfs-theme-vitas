@@ -694,7 +694,7 @@ table tr td {
 input[type="text"].cart-amount {
 	height: 30px;
 	width: 100px;
-	margin: 0;
+	margin: 5px 0 5px 0;
 }
 input[type="text"], input[type="password"] {
 	height: 25px;
