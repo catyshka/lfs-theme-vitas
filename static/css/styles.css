@@ -706,6 +706,6 @@ input[type="text"], input[type="password"] {
 	float: none;
     width: 100%;
 }
-form.pass-reset #id_email {
+form.pass-reset #id_email, form.pass-reset #id_new_password, form.pass-reset #id_new_password2 {
 	width: 100%;
 }
