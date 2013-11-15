@@ -50,9 +50,10 @@
             <input type="hidden"
                    name="next"
                    value="{{ next_url }}" />
-
-            <button type="submit"
+			<p class="buttons">
+            	<button type="submit"
                     class="button login-button emphasized right">{% trans 'Login' %}</button>
+            </p>
         </form>
     </div>
 
@@ -79,9 +80,10 @@
                     <input type="hidden"
                            name="next"
                            value="{{ next_url }}" />
-
+ 					<p class="buttons">
                     <button type="submit"
                             class="button register-button emphasized right">{% trans "Register" %}</button>
+                    </p>
             </form>
         </div>
     {% endif %}
