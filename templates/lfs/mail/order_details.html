@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load lfs_tags %}
+{% load custom_tags %}
 <table class="order-general">
     <tr>
         <th colspan="4">
@@ -55,7 +56,7 @@
             {% trans 'Total' %}:
         </td>
         <td>
-            {{ order.price|currency }}
+            {{ order.price|currency_ru }}
         </td>
     </tr>
 </table>
@@ -83,9 +84,11 @@
             <div>
                 {{ order.shipping_lastname }}
             </div>
-            <div>
-                {{ order.shipping_company_name }}
-            </div>
+            {% if order.shipping_company_name %}
+	            <div>
+	                {{ order.shipping_company_name }}
+	            </div>
+            {% endif %}
             <div>
                 {{ order.shipping_line1 }}
             </div>
@@ -94,9 +97,6 @@
             </div>
             <div>
                 {{ order.shipping_code }} {{ order.shipping_city }}
-            </div>
-            <div>
-                {{ order.shipping_country }}
             </div>
             <div>
                 {{ order.shipping_phone }}
@@ -209,7 +209,7 @@
                 {% if item.product.is_configurable_product %}
                     {% for property in item.get_properties %}
                         <div>
-                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency }})
+                            {{ property.title }} : {{ property.value }} {{ property.unit|safe }} ({{ property.price|currency_ru }})
                         </div>
                     {% endfor %}
                 {% endif %}
@@ -224,10 +224,10 @@
                 {% endif %}
             </td>
             <td class="number">
-               {{ item.product_price_gross|currency }}{% if item.product.price_unit %} / {{ item.product.price_unit }}{% endif %}
+               {{ item.product_price_gross|currency_ru }}{% if item.product.price_unit %} / {{ item.product.price_unit }}{% endif %}
             </td>
             <td class="number">
-               {{ item.price_gross|currency }}
+               {{ item.price_gross|currency_ru }}
             </td>
         </tr>
     {% endfor %}
@@ -242,10 +242,10 @@
                 1
             </td>
             <td class="number">
-                - {{ order.voucher_price|currency }}
+                - {{ order.voucher_price|currency_ru }}
             </td>
             <td class="number">
-                - {{ order.voucher_price|currency }}
+                - {{ order.voucher_price|currency_ru }}
             </td>
         </tr>
     {% endif %}
@@ -259,10 +259,10 @@
             1
         </td>
         <td class="number">
-            {{ order.shipping_price|currency }}
+            {{ order.shipping_price|currency_ru }}
         </td>
         <td class="number">
-            {{ order.shipping_price|currency }}
+            {{ order.shipping_price|currency_ru }}
         </td>
     </tr>
     <tr>
@@ -274,23 +274,16 @@
             1
         </td>
         <td class="number">
-            {{ order.payment_price|currency }}
+            {{ order.payment_price|currency_ru }}
         </td>
         <td class="number">
-            {{ order.payment_price|currency }}
+            {{ order.payment_price|currency_ru }}
         </td>
     </tr>
     <tr class="total">
         <td colspan="5"
             class="number total">
-            {{ order.price|currency }}
-        </td>
-    </tr>
-    <tr>
-        <td colspan="5"
-            class="number tax">
-            <span class="total-label">{% trans 'Inclusive VAT' %}:</span>
-            {{ order.tax|currency }}
+            {{ order.price|currency_ru }}
         </td>
     </tr>
 </table>
