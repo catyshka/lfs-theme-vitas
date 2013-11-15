@@ -22,17 +22,22 @@
 	    <p class="message">
 	        {% trans 'Please leave us a message. We will answer as soon as possible.' %}
 	    </p>
-	
-	    <form action="{% url lfs_contact_form %}"
-	          method="post">
-	
-	        {% csrf_token %}
-	        {% include "lfs/shop/lfs_form.html" %}
-	
-	        <div class="buttons">
-	            <button class="button emphasized left"
-	                   type="submit">{% trans 'Send' %}</button>
-	        </div>
-	    </form>
+		<div class='row'>
+			<div class='span2 offset4'>
+		    <form action="{% url lfs_contact_form %}"
+		          method="post">
+		
+		        {% csrf_token %}
+		        {% include "lfs/shop/lfs_form.html" %}
+		
+		        <div class="buttons">
+		            <button class="button emphasized left"
+		                   type="submit">{% trans 'Send' %}</button>
+		        </div>
+		    </form>
+		    </div>
+		    <div class='span2'>
+		    </div>
+		</div>
 	</div>
 {% endblock %}
