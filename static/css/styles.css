@@ -665,32 +665,47 @@ h3 {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    margin: 0 auto;
+}
+#cart-form table {
+	margin: 0 auto;
 }
 table, table tr, table tr td, table tr th {
     border-color: #E5E5E5;
 }
 table tr th {
     background-color: #FDFDFD;
-    border: 1px solid #E5E5E5;
     text-align: left;
     color: #666666;
     font-weight: bold;
-    padding: 9px 20px;
+    padding: 5px 20px;
 }
 table.nobordered tr th {
 	border-width: 0;
 }
 table tr td {
-	padding: 9px 20px;
+	padding: 0 20px;
 	vertical-align: baseline;
 	
 }
-input[type="text"] {
+.contact-form #id_name, .contact-form #id_email {
+    width: 206px;
+}
+ 
+input[type="text"].cart-amount {
 	height: 30px;
 	width: 100px;
 	margin: 0;
 }
+input[type="text"], input[type="password"] {
+	height: 25px;
+}
 #cart-inline {
 	margin: 0 0 20px 0;
+}
+.navbar .nav {
+	float: none;
+    width: 100%;
+}
+form.pass-reset #id_email {
+	width: 100%;
 }

@@ -1,0 +1,108 @@
+{% extends "lfs/base.html" %}
+{% load i18n %}
+{% load lfs_tags %}
+
+{% block title %}
+    {% trans 'Login' %} - {{ block.super }}
+{% endblock %}
+
+{% block section %}checkout-login{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs _("Login") %}
+{% endblock %}
+
+{% block wrapper %}
+	<div class="header-wrapper">
+	    <div class="header2">
+	        {% trans 'Please select!' %}
+	    </div>
+    </div>
+	<div class='row'>
+    <div class="span6">
+        <div class="header3">{% trans 'Login' %}</div>
+
+        <div class="description">
+            {% trans 'If you are already customer you can login. Your adress data will then already known.' %}
+        </div>
+
+        <form class="authenticate"
+              action="{% url lfs_checkout_login %}"
+              method="post">
+            {% csrf_token %}
+            <div class="form">
+                <table>
+                    {{ login_form }}
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a href="{% url lfs_password_reset %}">{% trans 'Forgot password?' %}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <input type="hidden"
+                   name="action"
+                   value="login" />
+
+            <input type="hidden"
+                   name="next"
+                   value="{% url lfs_checkout %}" />
+
+            <button type="submit"
+                    class="button checkout-button emphasized right"
+                    href="{% url lfs_checkout %}">{% trans 'Login' %}</button>
+
+        </form>
+    </div>
+
+    {% if not ANON_ONLY %}
+        <div class="span6">
+            <div class="header3">{% trans 'Register' %}</div>
+
+            <div class="description">
+                {% trans 'If you are not already a customer you can register in order to store your address data and to follow the state of your orders.' %}
+            </div>
+
+            <form action="{% url lfs_checkout_login %}"
+                  method="post">
+                    {% csrf_token %}
+                    <div class="form">
+                        <table>
+                            {{ register_form }}
+                        </table>
+                    </div>
+                    <input type="hidden"
+                           name="action"
+                           value="register" />
+
+                    <input type="hidden"
+                           name="next"
+                           value="{% url lfs_checkout %}" />
+
+                    <button class="button register-button emphasized right"
+                            type="submit"
+                            href="{% url lfs_checkout %}">{% trans "Register" %}</button>
+            </form>
+
+        </div>
+    {% endif %}
+    {% if anonymous_checkout %}
+        <div class="span6">
+            <div class="header3">{% trans 'Checkout' %}</div>
+
+            <div class="description">
+                {% trans 'You can also checkout without login or registration.' %}
+            </div>
+
+            <div class="form">&nbsp;</div>
+
+            <a class="button checkout-button emphasized right"
+               href="{% url lfs_checkout %}">
+               {% trans 'Checkout' %}
+            </a>
+        </div>
+    {% endif %}
+    </div><br/><br/>
+{% endblock %}
