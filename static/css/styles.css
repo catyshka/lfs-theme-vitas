@@ -712,3 +712,6 @@ form.pass-reset #id_email, form.pass-reset #id_new_password1, form.pass-reset #i
 .buttons {
     margin-top: 20px;
 }
+form {
+    margin: 10px 0 20px;
+}
