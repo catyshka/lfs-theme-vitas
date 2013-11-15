@@ -22,8 +22,6 @@
 	    <p class="message">
 	        {% trans 'Please leave us a message. We will answer as soon as possible.' %}
 	    </p>
-		<div class='row'>
-			<div class='span2 offset4'>
 		    <form id='contact-form' action="{% url lfs_contact_form %}"
 		          method="post">
 		
@@ -35,9 +33,5 @@
 		                   type="submit">{% trans 'Send' %}</button>
 		        </div>
 		    </form>
-		    </div>
-		    <div class='span2'>
-		    </div>
-		</div>
 	</div>
 {% endblock %}
