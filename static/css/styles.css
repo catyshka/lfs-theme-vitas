@@ -262,6 +262,9 @@ body {
 .content-wrapper {
 	padding: 0 20px 40px 20px;
 }
+.description-wrapper {
+	padding: 0 20px 5px 20px;
+}
 .catalog {
 	padding: 0 10px;
 }
