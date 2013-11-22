@@ -722,3 +722,6 @@ form {
 .sorting form {
     margin: 10px 0 5px;
 }
+form#filter-form {
+	margin: 10px 0 0;
+}
