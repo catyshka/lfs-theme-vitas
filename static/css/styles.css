@@ -87,6 +87,8 @@ body {
 	text-align: left;
 	line-height: 1;
 	font-weight: 500;
+	padding: 10px 0;
+	color: #fff;
 }
 .main-content-block {
 	background-color: #fff;
