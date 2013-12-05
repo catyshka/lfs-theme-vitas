@@ -2,6 +2,8 @@
 {% load i18n %}
 {% load lfs_portlets_tags %}
 
+{% block title %} Сделать заказ{% endblock %}
+
 {% block head %}
     {% if shop.get_meta_keywords %}
         <meta name="keywords" content="{{ shop.get_meta_keywords }}" />
@@ -14,9 +16,9 @@
 
 {% block content %}
 		<div class='header-wrapper'>
-	 		<div class='header2'>
+	 		<h2>
 	  			Сделать заказ <span class='title-note'>&nbsp;заполните форму и мы свяжемся с вами</span>
-	  		</div>
+	  		</h2>
   		</div>
   		<div class='content-wrapper'>
   			<div class='contact-form-wrapper'>

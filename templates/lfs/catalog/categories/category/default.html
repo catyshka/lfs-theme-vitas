@@ -6,11 +6,12 @@
 	    });
 	});
 </script>
+{% block title %} {{ category.name }}{% endblock %}
 <div class="container">
 	<div class='header-wrapper'>
-		<div class='header2'>
+		<h2>
 		    {{ category.name }}
-		</div>
+		</h2>
 	</div>
 	<div class="description-wrapper">
 	    {{ category.description|safe }}
@@ -21,7 +22,7 @@
 	            <tr>
 	                {% for category in row %}
 	                    <td class="category-row">
-	                        <div class='header3'><a href="{% url lfs_category category.slug %}">{{ category.name }}</a></div>
+	                        <h3><a href="{% url lfs_category category.slug %}">{{ category.name }}</a></h3>
 	                        {% if category.get_image %}
 	                        <div class="category-image">
 	                            <a href="{% url lfs_category category.slug %}">

@@ -9,7 +9,7 @@
         </li>
         {% for tab in tabs %}
             <li {% if tab.selected %}class="selected"{% endif %}>
-                <a href="{{ tab.link }}">
+                <a href="{{ tab.link }}" alt="{{ tab.title }}">
                     {{ tab.title }}
                 </a>                                
             </li>            

@@ -245,12 +245,15 @@ body {
 	border-bottom: 1px solid #E9E9E9;
     margin-bottom: 20px;
 }
-.header2 {
+h2 {
 	font-size: 28px;
 	color: #5C5C5C;
     padding: 30px 20px 26px;
+    font-weight: 400;
+    line-height:	20px;
+    margin: 0;
 }
-.header3, .header3 > a, .header3 > a:visited {
+h3, h3 > a, h3 > a:visited {
 	font-size: 24px;
 	border-color: #E9E9E9;
     color: #41607D;
@@ -635,13 +638,6 @@ ul, ol {
 }
 #product-form {
 	margin: 0 200px 20px;
-}
-h3 {
-    font-size: 24px;
-    color: #41607D;
-    font-weight: lighter;
-    line-height: 1;
-    margin-bottom: 15px;
 }
 
 

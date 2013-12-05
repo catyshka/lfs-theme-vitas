@@ -14,9 +14,9 @@
 {% block content %}
 	<div class='content-wrapper'>
 		<div class='header-wrapper'>
-	 		<div class='header2'>
+	 		<h2>
 	 		Оформление заказа
-	 		</div>
+	 		</h2>
 	 	</div>
 	    {% if form.errors %}
 	        <div class="form-errors">
@@ -43,7 +43,7 @@
 	
 	            {# Shipping #}
 	            <div class="shipping">
-	                <div class='header2'>{% trans 'Shipping' %}</div>
+	                <h2>{% trans 'Shipping' %}</h2>
 	                <div id="shipping-inline">
 	                    {{ shipping_inline|safe }}
 	                </div>
