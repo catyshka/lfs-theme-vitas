@@ -191,7 +191,7 @@
     {# Variants #}
     {% if product.is_variant %}
         <div class="variants">
-            <h2 class="section">{% trans 'Variants' %}</h2>
+            <h1 class="section">{% trans 'Variants' %}</h1>
             {# List #}
             {% if display_variants_list %}
                 <table class="product-variants lfs-default"
@@ -267,7 +267,7 @@
     {# Attachments #}
     {% if attachments %}
         <div class="attachments">
-            <h2 class="section">{% trans 'Attachments' %}</h2>
+            <h1 class="section">{% trans 'Attachments' %}</h1>
             {% for attachment in attachments %}
             <div class="item">
                 <div class="title">
@@ -288,7 +288,7 @@
     {# Accessories #}
     {% if product_accessories %}
         <div class="accessories">
-            <h2 class="section">{% trans 'Accessories' %}</h2>
+            <h1 class="section">{% trans 'Accessories' %}</h1>
             <table class="product-accessories lfs-default">
                 <tr>
                     <th></th>

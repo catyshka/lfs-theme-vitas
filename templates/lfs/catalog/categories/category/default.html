@@ -9,9 +9,9 @@
 {% block title %} {{ category.name }}{% endblock %}
 <div class="container">
 	<div class='header-wrapper'>
-		<h2>
+		<h1>
 		    {{ category.name }}
-		</h2>
+		</h1>
 	</div>
 	<div class="description-wrapper">
 	    {{ category.description|safe }}
@@ -22,7 +22,7 @@
 	            <tr>
 	                {% for category in row %}
 	                    <td class="category-row">
-	                        <h3><a href="{% url lfs_category category.slug %}">{{ category.name }}</a></h3>
+	                        <h2><a href="{% url lfs_category category.slug %}">{{ category.name }}</a></h2>
 	                        {% if category.get_image %}
 	                        <div class="category-image">
 	                            <a href="{% url lfs_category category.slug %}">

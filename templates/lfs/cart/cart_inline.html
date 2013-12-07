@@ -4,7 +4,7 @@
 <div class='content-wrapper'>
 {% if cart_items %}
     <div class="header-wrapper">
-		<h2> Ваша корзина </h2>
+		<h1> Ваша корзина </h1>
 	</div>
 
     <form id="cart-form"
@@ -124,9 +124,9 @@
         </table>
     </form>
 {% else %}
-    <h2>
+    <h1>
         {% trans 'Your Cart is empty' %}
-    </h2>
+    </h1>
     <a class="button emphasized left"
        href="{{ shopping_url }}">
        {% trans 'Go on shopping' %}

@@ -12,13 +12,13 @@
 {% block content %}
 <div class=content-wrapper>
 	<div class='header-wrapper'>
-		<h2>
+		<h1>
 		    {% if plural %}
 		        {% trans 'This products have been added to cart' %}
 		    {% else %}
 		        {% trans 'This product has been added to cart' %}
 		    {% endif %}
-		</h2>
+		</h1>
 	</div>
     <div id="cart-items">
         {{ cart_items }}
