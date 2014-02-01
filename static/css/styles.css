@@ -180,7 +180,7 @@ body {
 	border-left-color: #F8F8F8;
 	margin: 0;
 	display: block;
-	padding: 18px 70px;
+	padding: 18px 40px;
 }
 .navbar-custom .navbar-inner-custom .container  .nav-custom > li > a {
 	color: #828282;
@@ -498,7 +498,7 @@ h2, h2 > a, h2 > a:visited {
 	border-right: none;
 }
 .navbar-custom .navbar-inner-custom .container .nav-custom > li.category-item-last{
-	padding: 18px 97px 18px 70px;
+	padding: 18px 77px 18px 40px;
 	float: left;
 }
 .navbar-custom .navbar-inner-custom .container .nav-custom > li#search-link-wrapper > a#search-link{
