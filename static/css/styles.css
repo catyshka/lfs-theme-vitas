@@ -191,6 +191,20 @@ body {
 .navbar-custom .navbar-inner-custom .container  .nav-custom > li.active > a {
 	color: #3D3D3D;
 }
+
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > a, 
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > a:hover, 
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > a:focus, 
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last.active > a,
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last.active > a:hover,
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last.active > a:focus {
+	color: #CC9900 !important;
+}
+
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > .nav-indicator {
+    color: #CC9900;
+}
+
 .nav-indicator {
 	margin-left: 3px;
 }
