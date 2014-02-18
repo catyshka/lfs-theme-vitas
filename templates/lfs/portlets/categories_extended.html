@@ -8,7 +8,7 @@
 		{% endifequal %}
 		 <div class="span4 main-page-block">
         	<div class='main-page-block-icon'>
-        		<img src='/static/images/service{{forloop.counter}}.png' alt=''/>
+        		<img src='/static/images/service{{forloop.counter0}}.png' alt=''/>
         	</div>
         	<div class='main-page-block-title'>
         		<a {% if category.is_current %}class="current"{% endif %} href="{{ category.category.get_absolute_url }}">
