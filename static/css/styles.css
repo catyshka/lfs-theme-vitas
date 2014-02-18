@@ -70,12 +70,14 @@ body {
 .showcase .slides li {
 	list-style: none outside none;
 	position: relative;
+	width: 100%;
+	height:380px;
 }
 .showcase-title-block {
 	background-color: #151F29;
 	opacity: 0.9 !important;
 	position: absolute;
-	bottom: 20px;
+	bottom: 40px;
 	left: 20px;
 	padding: 22px 27px;
 	width: 40%;

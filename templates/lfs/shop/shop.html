@@ -13,17 +13,79 @@
 
 
 {% block content %}
-	<div class="showcase">
-        <ul class='slides'>
-        	<li style='background-image: url(/static/images/showcase2.png);height:380px;'>
-        		<div class='showcase-title-block'>
-        			<h1>Отличная санетхника оптом</h1>
-        			<div class='clear'></div>
-        			жизнь начинается с воды, а вода на вашем объекте с нашей сантехники
-        		</div>
+<div class="jcarousel-wrapper">
+	<div class="jcarousel">
+        <ul>
+        	<li>
+        		<img src='{{STATIC_URL}}images/showcase2.png'>
+        	</li>
+        	<li>
+        		<img src='{{STATIC_URL}}images/showcaseAstra.jpg'>
+        	</li>
+        	<li>
+        		<img src='{{STATIC_URL}}images/showcaseGracia.jpg'>
         	</li>
         </ul>
 	</div>
+	<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                
+    <p class="jcarousel-pagination">
+                    
+    </p>
+    <div class='showcase-title-block'>
+		<h1>Отличная санетхника оптом</h1>
+		<div class='clear'></div>
+		жизнь начинается с воды, а вода на вашем объекте с нашей сантехники
+	</div>
+</div>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}jquery/jcarousel2/style.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}jquery/jcarousel2/jcarousel.basic.css">
+<script src="{{STATIC_URL}}jquery/jcarousel2/jquery.jcarousel.min.js"></script>
+	<script type='text/javascript'>
+			(function($) {
+			    $(function() {
+			        $('.jcarousel').jcarousel({
+			        	wrap: 'circular'
+			        });
+			        $('.jcarousel-control-prev')
+			            .on('jcarouselcontrol:active', function() {
+			                $(this).removeClass('inactive');
+			            })
+			            .on('jcarouselcontrol:inactive', function() {
+			                $(this).addClass('inactive');
+			            })
+			            .jcarouselControl({
+			                target: '-=1'
+			            });
+
+			        $('.jcarousel-control-next')
+			            .on('jcarouselcontrol:active', function() {
+			                $(this).removeClass('inactive');
+			            })
+			            .on('jcarouselcontrol:inactive', function() {
+			                $(this).addClass('inactive');
+			            })
+			            .jcarouselControl({
+			                target: '+=1'
+			            });
+
+			        $('.jcarousel-pagination')
+			            .on('jcarouselpagination:active', 'a', function() {
+			                $(this).addClass('active');
+			            })
+			            .on('jcarouselpagination:inactive', 'a', function() {
+			                $(this).removeClass('active');
+			            })
+			            .jcarouselPagination();
+			        $('.jcarousel').jcarouselAutoscroll({
+			            interval: 3000,
+			            target: '+=1',
+			            autostart: true
+			        });
+			    });
+			})(jQuery);
+	</script>
 	<!-- Example row of columns -->
 	<div class="row-fluid">
 		<div class='main-content-header-wrapper'>
