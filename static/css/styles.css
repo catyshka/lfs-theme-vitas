@@ -192,16 +192,16 @@ body {
 	color: #3D3D3D;
 }
 
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > a, 
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > a:hover, 
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > a:focus, 
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last.active > a,
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last.active > a:hover,
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last.active > a:focus {
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first > a, 
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first > a:hover, 
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first > a:focus, 
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first.active > a,
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first.active > a:hover,
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first.active > a:focus {
 	color: #CC9900 !important;
 }
 
-.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-last > .nav-indicator {
+.navbar-custom .navbar-inner-custom .container  .nav-custom > li.category-item-first > .nav-indicator {
     color: #CC9900;
 }
 
