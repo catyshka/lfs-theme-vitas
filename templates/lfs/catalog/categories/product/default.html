@@ -3,13 +3,18 @@
 {% load i18n custom_tags %}
 
 <div class='products-catalog'>
-	{% sorting %}
   	<h1>
-    	{{ category.name }}
+    	{% if category.title %}
+			{{ category.title }}
+		{% endif %}
+		{% if not category.title %}
+			{{ category.name }}
+		{% endif %}	
 	</h1>
 	<div class="description-wrapper">
 	    {{ category.description|safe }}
 	</div>
+	{% sorting %}
 	{% if category.filter_categories %}
 		<form id='filter-form' action='{% url lfs_category category.slug %}'>
 		<div class='filter-header'>ФИЛЬТР</div>

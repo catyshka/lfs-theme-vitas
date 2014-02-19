@@ -19,9 +19,12 @@
 		</h1>
 	</div>
 	<div class='content-wrapper'>
-	    <p class="message">
-	        {% trans 'Please leave us a message. We will answer as soon as possible.' %}
-	    </p>
+	        Для того чтобы связаться с нами вы можете воспользоваться одним из способов:
+	        <ul class='contact-options'>
+	        	<li>Позвонить по телефону <span class='phone'>(812) 909-51-64</span></li>
+	        	<li>Написать письмо на электронную почту <span class='email'>liquidtech.ru@gmail.com</span></li>
+	        	<li>Отправить сообщение через сайт:</li>
+	        </ul>
 		    <form id='contact-form' action="{% url lfs_contact_form %}"
 		          method="post">
 		

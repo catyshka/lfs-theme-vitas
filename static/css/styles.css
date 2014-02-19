@@ -390,8 +390,14 @@ h2, h2 > a, h2 > a:visited {
 .phone-block {
 	top: 20px;
 }
+.phone-block .phone {
+	font-weight: 600;
+	font-size: 20px;
+}
 .email-block {
 	top: 40px;
+	font-size: 18px;
+    font-weight: 600;
 }
 .lfs-default .product-data {
 	 
@@ -454,9 +460,9 @@ h2, h2 > a, h2 > a:visited {
 }
 .sorting-header {
 	float: left;
-	margin: 6px 10px 0 20px	
+	margin: 0 10px 0 20px	
 }
-#brand-filter, #subcategory-filter {
+#brand-filter, #subcategory-filter, .sorting select {
 	border-radius: 0;
 	height: 25px;
 	padding: 1px 2px;
@@ -542,7 +548,7 @@ h2, h2 > a, h2 > a:visited {
     line-height: 14px;
     margin: 0 5px 0 0;
     padding: 6px 5px;
-    width: 170px;
+    width: 300px;
     background-color: #5E6C78;
     color: #FFFFFF;
 }
@@ -735,8 +741,28 @@ form {
     margin: 10px 0 20px;
 }
 .sorting form {
-    margin: 10px 0 5px;
+    margin: 0 0 5px;
 }
 form#filter-form {
 	margin: 10px 0 0;
+}
+.jcarousel-item-wrapper {
+    background-color: #F6F6F6;
+    border-color: #E9E9E9;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 6px;
+    margin: 0 3px;
+}
+.contact-options li {
+	margin: 20px 20px;
+}
+.contact-options .phone {
+	font-weight: 600;
+	font-size: 18;
+}
+.contact-options .email {
+	font-weight: 600;
+	font-size: 18;
 }

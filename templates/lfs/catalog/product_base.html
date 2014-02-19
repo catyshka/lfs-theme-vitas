@@ -27,11 +27,48 @@
 
 {% block content %}
 	<script type="text/javascript">
-		jQuery(document).ready(function() {
-		    jQuery('#mycarousel').jcarousel({
-		        // Configuration goes here
+		(function($) {
+		    $(function() {
+			    $('.jcarousel').jcarousel({
+		        	wrap: 'circular'
+		        });
+		        $('.jcarousel-control-prev')
+		            .on('jcarouselcontrol:active', function() {
+		                $(this).removeClass('inactive');
+		            })
+		            .on('jcarouselcontrol:inactive', function() {
+		                $(this).addClass('inactive');
+		            })
+		            .jcarouselControl({
+		                target: '-=1'
+		            });
+	
+		        $('.jcarousel-control-next')
+		            .on('jcarouselcontrol:active', function() {
+		                $(this).removeClass('inactive');
+		            })
+		            .on('jcarouselcontrol:inactive', function() {
+		                $(this).addClass('inactive');
+		            })
+		            .jcarouselControl({
+		                target: '+=1'
+		            });
+	
+		        $('.jcarousel-pagination')
+		            .on('jcarouselpagination:active', 'a', function() {
+		                $(this).addClass('active');
+		            })
+		            .on('jcarouselpagination:inactive', 'a', function() {
+		                $(this).removeClass('active');
+		            })
+		            .jcarouselPagination();
+		        $('.jcarousel').jcarouselAutoscroll({
+		            interval: 3000,
+		            target: '+=1',
+		            autostart: true
+		        });
 		    });
-		});
+		})(jQuery);
 	</script>
     {{ product.static_block.html|safe }}
 
@@ -45,23 +82,29 @@
     <div id="product-inline">
         {{ product_inline|safe }}
     </div>
-	<ul id="mycarousel" class="jcarousel-skin-tango">
-		{% for product in product.same_category_products %}
-			<li style=''>
-				<div class='category-product-block'>
-					<a href="{% url lfs.catalog.views.product_view product.slug %}">
-						{% if product.image.url_100x100 %}
-							<img alt="{{ product.name }}"
-								src="{{ product.image.url_100x100 }}" />
-						{% endif %}
-					</a>
-					<div class='category-product-name'>
-						{{product.name}}
-					</div>
-				</div>
-			</li>
-		{% endfor %}
-	</ul>
+    <div class="jcarousel-wrapper jcarousel-wrapper-categories">
+		<div class="jcarousel jcarousel-categories">
+			<ul>
+				{% for product in product.same_category_products %}
+					<li class='jcarousel-item-wrapper'>
+						<div class='category-product-block'>
+							<a href="{% url lfs.catalog.views.product_view product.slug %}">
+								{% if product.image.url_100x100 %}
+									<img alt="{{ product.name }}"
+										src="{{ product.image.url_100x100 }}" />
+								{% endif %}
+							</a>
+							<div class='category-product-name'>
+								{{product.name}}
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<a href="#" class="jcarousel-control-prev jcarousel-control-prev-categories">&lsaquo;</a>
+		<a href="#" class="jcarousel-control-next jcarousel-control-next-categories">&rsaquo;</a>
+	</div>
 	<br/><br/>
     {% tags_for_object product as tags %}
     {% if tags %}

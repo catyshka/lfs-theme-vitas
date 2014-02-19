@@ -3,23 +3,44 @@
 
 {% if categories %}
 	{% for category in categories %}
-		{% ifequal forloop.counter0|divisibleby:"3" 1 %}
-			<div class="row-fluid main-content-block">
-		{% endifequal %}
-		 <div class="span4 main-page-block">
-        	<div class='main-page-block-icon'>
-        		<img src='/static/images/service{{forloop.counter0}}.png' alt=''/>
-        	</div>
-        	<div class='main-page-block-title'>
-        		<a {% if category.is_current %}class="current"{% endif %} href="{{ category.category.get_absolute_url }}">
-        			<h1>{{ category.category.name }}</h1>
-        		</a>
-        	</div>
-        	<div class='clear'></div>
-        	<div class='main-content-block-text'>{{ category.category.short_description|safe }}</div>
-        </div>
-	    {% ifequal forloop.counter|divisibleby:"3" 1 %}
+		<div class="row-fluid main-content-block">
+			<div class="span8">
+				<div class="jcarousel-wrapper jcarousel-wrapper-categories">
+					<div class="jcarousel jcarousel-categories">
+						<ul>
+							{% for product in category.products %}
+								<li class='jcarousel-item-wrapper'>
+									<div class='category-product-block'>
+										<a href="{% url lfs.catalog.views.product_view product.slug %}">
+											{% if product.image.url_100x100 %}
+												<img alt="{{ product.name }}"
+													src="{{ product.image.url_100x100 }}" />
+											{% endif %}
+										</a>
+										<div class='category-product-name'>
+											{{product.name}}
+										</div>
+									</div>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<a href="#" class="jcarousel-control-prev jcarousel-control-prev-categories">&lsaquo;</a>
+				    <a href="#" class="jcarousel-control-next jcarousel-control-next-categories">&rsaquo;</a>
+			    </div>
 			</div>
-		{% endifequal %}
+			<div class="span4 main-page-block">
+	        	<div class='main-page-block-icon'>
+	        		<img src='/static/images/service{{forloop.counter0}}.png' alt=''/>
+	        	</div>
+	        	<div class='main-page-block-title'>
+	        		<a {% if category.is_current %}class="current"{% endif %} href="{{ category.category.get_absolute_url }}">
+	        			<h1>{{ category.category.name }}</h1>
+	        		</a>
+	        	</div>
+	        	<div class='clear'></div>
+	        	<div class='main-content-block-text'>{{ category.category.short_description|safe }}</div>
+	        </div>
+	    </div>
 	{% endfor %}
 {% endif %}
