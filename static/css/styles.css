@@ -5,6 +5,13 @@ body {
 	padding-top: 40px;
 	color: #828282;
 }
+a {
+    color: #41607D;
+    text-decoration: none;
+}
+a:visited {
+    color: #41607D;
+}
 .clear {
 	clear: both;
 }
@@ -397,7 +404,7 @@ h2, h2 > a, h2 > a:visited {
 .email-block {
 	top: 40px;
 	font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .lfs-default .product-data {
 	 
@@ -765,4 +772,43 @@ form#filter-form {
 .contact-options .email {
 	font-weight: 600;
 	font-size: 18;
+}
+.navigation-account {
+	margin: 80px 0 40px 40px;
+}
+.navigation-account li {
+	border-bottom: 1px solid #E9E9E9;
+    padding: 8px 0 8px 15px;
+    background: url("../images/li-arrow.png") no-repeat scroll 0 14px rgba(0, 0, 0, 0);
+}
+.navigation-account ul {
+	list-style: none outside none;
+}
+.table-default {
+	border-color: #E5E5E5;
+    border-color: #E9E9E9;
+    border-style: solid;
+    border-width: 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+table.order {
+	margin: 20px;
+	width: 90%;
+}
+.table-default, .table-default tr, .table-default tr td, .table-default tr th {
+    border-color: #E5E5E5;
+}
+.table-default th {
+    background-color: #FDFDFD;
+    color: #666666;
+    font-weight: bold;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    text-align: left;
+}
+.table-default tr th, .table-default tr td {
+    border-right: 1px solid #E5E5E5;
+    padding: 9px 20px;
 }

@@ -58,6 +58,38 @@
 		           {% block tabs %}
 		               {% tabs %}
 		           {% endblock %}
+		            <div style='float:right'>
+					     {% if user.is_authenticated %}
+					         {% if user.first_name %}
+					             <span>{{ user.first_name }} {{user.last_name}}</span>
+					          {% else %}
+					              <span>{{ user.username }}</span>
+					          {% endif %} |
+					
+					          {% if user.is_superuser %}
+					               {% if category %}
+					                    <a href="{% url lfs_manage_category category.id %}">{% trans 'Manage' %}</a>
+					                {% endif %}
+					                {% if product %}
+					                     <a href="{% url lfs_manage_product product.id %}">{% trans 'Manage' %}</a>
+					                {% endif %}
+					                {% if page %}
+					                    <a href="{% url lfs_manage_page page.id %}">{% trans 'Manage' %}</a>
+					                {% endif %}
+					                {% if not category and not product and not page %}
+					                    <a href="{% url lfs_manage_dashboard %}">{% trans 'Manage' %}</a>
+					                 {% endif %}
+					                 |
+					           {% endif %}
+					
+					           <a href="/logout">{% trans 'Logout' %}</a> |
+					           <a href="{% url lfs_my_account %}">{% trans 'My account' %}</a>
+					    {% else %}
+					        {% if not ANON_ONLY %}
+					            <a href="{% url lfs_login %}">{% trans 'Login' %}</a>
+					        {% endif %}
+					    {% endif %}
+			        </div>
         		</div>
       		</div>
     	</div>
@@ -93,7 +125,7 @@
 	    	{% endblock %}
 	    	<div class='clear'></div>
 	   		<div class="footer">
-	        	<p>&copy; LiquidTech 2013</p>
+	        	<p>&copy; LiquidTech 2014</p>
 	      	</div>
 		</div>
 		<script type='text/javascript'>

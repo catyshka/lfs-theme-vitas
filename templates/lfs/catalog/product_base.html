@@ -72,13 +72,9 @@
 	</script>
     {{ product.static_block.html|safe }}
 
-    <div class="overview">
-        {% current_category product %}
-        <a href="{{ current_category.get_absolute_url }}">
-           {% trans 'Back to overview' %}&nbsp;>>
-        </a>
-    </div>
-
+    <h1>
+	     {{ product.get_name }}
+	</h1>
     <div id="product-inline">
         {{ product_inline|safe }}
     </div>
