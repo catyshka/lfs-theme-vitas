@@ -812,3 +812,6 @@ table.order {
     border-right: 1px solid #E5E5E5;
     padding: 9px 20px;
 }
+.highlighted-text {
+	color: #41607d;	
+}
