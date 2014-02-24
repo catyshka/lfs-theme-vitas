@@ -18,6 +18,11 @@
         <ul>
         	<li>
         		<img src='{{STATIC_URL}}images/showcase2.png'>
+        		<div class='showcase-title-block'>
+					<h1>Отличная санетхника оптом</h1>
+					<div class='clear'></div>
+					жизнь начинается с воды, а вода на вашем объекте с нашей сантехники
+				</div>
         	</li>
         	<li>
         		<img src='{{STATIC_URL}}images/showcaseAstra.jpg'>
@@ -40,11 +45,6 @@
     <a href="#" class="jcarousel-control-next jcarousel-control-next-main">&rsaquo;</a>
                 
     <p class="jcarousel-pagination"></p>
-    <div class='showcase-title-block'>
-		<h1>Отличная санетхника оптом</h1>
-		<div class='clear'></div>
-		жизнь начинается с воды, а вода на вашем объекте с нашей сантехники
-	</div>
 </div>
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}jquery/jcarousel2/jcarousel.basic.css">
 <script src="{{STATIC_URL}}jquery/jcarousel2/jquery.jcarousel.min.js"></script>
@@ -84,7 +84,7 @@
 			                $(this).removeClass('active');
 			            })
 			            .jcarouselPagination();
-			        $('.jcarousel').jcarouselAutoscroll({
+			        $('.jcarousel1').jcarouselAutoscroll({
 			            interval: 3000,
 			            target: '+=1',
 			            autostart: true
