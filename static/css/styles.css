@@ -90,6 +90,13 @@ a:visited {
 	width: 40%;
 	color: #fff;
 }
+.showcase-title-block-small {
+	background-color: #151F29;
+	opacity: 0.9 !important;
+	position: absolute;
+	padding: 15px 20px;
+	color: #fff;
+}
 .showcase-title-block h1 {
 	font-size: 25px;
 	margin: 0 0 10px 0;
@@ -98,6 +105,29 @@ a:visited {
 	font-weight: 500;
 	padding: 10px 0;
 	color: #fff;
+}
+.showcase-title-block-small h2, .showcase-title-block-small h2 a,
+.showcase-title-block-small > h2 > a:visited, 
+.showcase-title-block-small > h2 > a:hover,
+.showcase-title-block-small > h2 > a:focus,
+.showcase-title-block-small > h2 > a:active {
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	line-height: 1;
+	font-weight: 500;
+	color: #fff;
+	line-height: 27px;
+	font-stretch: expanded;
+	text-decoration: none;
+}
+.showcase-title-block-small h2, .showcase-title-block-small h2 a,
+.showcase-title-block-small > h2 > a:visited, 
+.showcase-title-block-small > h2 > a:hover,
+.showcase-title-block-small > h2 > a:focus,
+.showcase-title-block-small > h2 > a:active {
+	color: #fff !important;
 }
 .main-content-block {
 	background-color: #fff;
