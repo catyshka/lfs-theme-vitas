@@ -3,7 +3,7 @@
 {% load lfs_tags %}
 
   	
-{% block wrapper %}
+{% block content %}
 <div class='row-fluid'>
     <div class="span4">
         {% block left-slot %}
@@ -27,7 +27,7 @@
         {% endblock %}
     </div>
     <div class="span8 last">
-        {% block content %}{% endblock %}
+        {% block content-center %}{% endblock %}
     </div>
 </div>
 {% endblock %}
