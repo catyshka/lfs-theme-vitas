@@ -1,6 +1,7 @@
 {% extends "lfs/customer/base.html" %}
 {% load i18n %}
 {% load lfs_tags %}
+{% load custom_tags %}
 
 {% block title %}
     {% trans 'Your orders' %} - {{ block.super }}
@@ -22,7 +23,7 @@
     {% else %}
         <div class="site-actions">
             <form action="{% url lfs_my_orders %}"
-                  method="post">
+                  method="post" class='acount-orders'>
                 {% csrf_token %}
                 <select name="date-filter">
                     <option value="">{% trans 'All' %}</option>
@@ -30,8 +31,7 @@
                         <option value="{{ option.value }}" {% if option.selected %}selected="selected"{% endif %}>{% blocktrans count counter=option.value %}{{ counter }} month{% plural %}{{ counter }} months{% endblocktrans %}</option>
                     {% endfor %}
                 </select>
-                <input type="submit"
-                       value="{% trans 'Filter' %}">
+                <button class="button emphasized" type="submit">{% trans 'Filter' %}</button>
             </form>
         </div>
 
@@ -61,7 +61,7 @@
                         </a>
                     </td>
                     <td class="number">
-                        {{order.price|currency:request}}
+                        {{order.price|currency_ru}}
                     </td>
                     <td class="right">
                         {{order.get_state_display}}

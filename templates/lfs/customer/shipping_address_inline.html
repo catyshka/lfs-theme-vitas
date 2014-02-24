@@ -1,19 +1,16 @@
-<div id="invoice-address-inline">
-	<div style='display:none'>
-        {{ address_form.country }}
-	</div>
-		<ul>
-			<li>
-				<label for='name'>Имя*:</label>
-				{{ form.invoice_firstname.errors }}
-                {{ form.invoice_firstname }}
-			</li>
-			<li>
-				<label for='name'>Фамилия*:</label>
-				{{ form.invoice_lastname.errors }}
-                {{ form.invoice_lastname }}
-			</li>
-			<li>
+<div id="shipping-address-inline">
+    <ul class="shipping-address">
+            <li class="">
+                <label for='name'>Имя*:</label>
+                {{ form.shipping_firstname.errors }}
+                {{ form.shipping_firstname }}
+            </li>
+            <li class="">
+                <label for='name'>Фамилия*:</label>
+                {{ form.shipping_lastname.errors }}
+                {{ form.shipping_lastname }}
+            </li>
+            <li>
 				<label for='name'>Организация:</label>
                 {{ form.invoice_company_name.errors }}
                 {{ form.invoice_company_name }}
@@ -22,11 +19,6 @@
                 <label for="id_invoice-city">Город*:</label>
                 {{ address_form.city.errors }}
                 {{ address_form.city }}
-            </li>
-            <li class="">
-                <label for="id_invoice-zip">Индекс*:</label>
-                {{ address_form.code.errors }}
-                {{ address_form.code }}
             </li>
 			<li class="">
                 <label for="id_invoice-line1">Адрес*:</label>
@@ -38,5 +30,12 @@
 				{{ form.invoice_phone.errors }}
 		        {{ form.invoice_phone }}
 			</li>
-		</ul>
+			{% if request.user.is_anonymous %}
+				<li>
+					<label for='name'>Email:</label>
+					{{ form.invoice_email.errors }}
+			        {{ form.invoice_email }}
+				</li>
+			{% endif %}
+    </ul>
 </div>
